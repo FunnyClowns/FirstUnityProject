@@ -15,37 +15,7 @@ public class UIScript : MonoBehaviour
     public TextMeshProUGUI txtGameStat;
     public TextMeshProUGUI txtScoreGameStat;
     public TextMeshProUGUI txtQuotes;
-
-    private String targetLoadScene;
-
-    void Awake(){
-
-        switch(SceneManager.GetActiveScene().name){
-            case "Level01":
-                targetLoadScene = "Level02";
-                break;
-            
-            case "Level02":
-                targetLoadScene = "Level03";
-                break;
-
-            case "Level03":
-                break;
-
-            default:
-                Debug.Log("Error detecting active level.");
-                break;
-
-        }
-
-        // Button
-        btnReplay.onClick.AddListener(btnReplayClicked);
-
-        btnNextLevel.onClick.AddListener(btnNextClicked);
-
-        btnExitGame.onClick.AddListener(btnExitClicked);
-
-    }
+    
 
     public void endGame(bool isGameWin){
         txtScore.enabled = false;
@@ -60,7 +30,7 @@ public class UIScript : MonoBehaviour
         }
 
         txtQuotes.GetComponent<RandomQuotes>().getRandomQuotes();
-        StartCoroutine(showButtons(isGameWin));
+        StartCoroutine(showMenuButtons(isGameWin));
     }
 
     public void GameWin(){
@@ -76,10 +46,9 @@ public class UIScript : MonoBehaviour
         txtGameStat.text = "YOU LOSE!";
     }
 
-    // --------Buttons--------
 
-    // Show Button
-    private IEnumerator showButtons(bool isGameWin){
+    // Show Buttons
+    private IEnumerator showMenuButtons(bool isGameWin){
         yield return new WaitForSeconds(2);
 
         if (isGameWin){
@@ -91,60 +60,4 @@ public class UIScript : MonoBehaviour
         btnExitGame.gameObject.SetActive(true);
     }
 
-    // --------Replay Button--------
-
-    // Trigger when button is clicked
-    private void btnReplayClicked(){
-        bool isClicked = false;
-
-        if(!isClicked){
-            isClicked = true;
-            StartCoroutine("replayGame");
-        }
-    }
-
-    // Replay the game
-    private IEnumerator replayGame(){
-        yield return new WaitForSeconds(2);
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    // --------Next Button--------
-
-    // Trigger when button is clicked
-    private void btnNextClicked(){
-        bool isClicked = false;
-
-        if(!isClicked){
-            isClicked = true;
-            StartCoroutine("changeLevel");
-        }
-    }
-
-    // Move player scene to Level02
-    private IEnumerator changeLevel(){
-        yield return new WaitForSeconds(2);
-
-        SceneManager.LoadScene(targetLoadScene);
-    }
-
-    // --------Exit Button--------
-
-    //Trigger when button is clicked
-    private void btnExitClicked(){
-        bool isClicked = false;
-
-        if (!isClicked){
-            isClicked = true;
-            StartCoroutine("exitGame");
-        }
-    }
-
-    private IEnumerator exitGame(){
-        yield return new WaitForSeconds(2);
-
-        Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
-    }
 }

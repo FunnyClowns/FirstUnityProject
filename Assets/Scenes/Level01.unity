@@ -3347,6 +3347,7 @@ GameObject:
   - component: {fileID: 783445916}
   - component: {fileID: 783445915}
   - component: {fileID: 783445914}
+  - component: {fileID: 783445917}
   m_Layer: 5
   m_Name: BtnExitGame
   m_TagString: Untagged
@@ -3456,6 +3457,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783445911}
   m_CullTransparentMesh: 1
+--- !u!114 &783445917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783445911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07622e331c3792349a281e4356e4ef09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelButton: 0
+  replayGameButton: 0
+  exitGameButton: 1
 --- !u!1001 &807959892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6065,6 +6081,7 @@ GameObject:
   - component: {fileID: 1408191257}
   - component: {fileID: 1408191256}
   - component: {fileID: 1408191255}
+  - component: {fileID: 1408191258}
   m_Layer: 5
   m_Name: BtnNextLevel
   m_TagString: Untagged
@@ -6174,6 +6191,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408191253}
   m_CullTransparentMesh: 1
+--- !u!114 &1408191258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408191253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07622e331c3792349a281e4356e4ef09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelButton: 1
+  replayGameButton: 0
+  exitGameButton: 0
 --- !u!1 &1483576507
 GameObject:
   m_ObjectHideFlags: 0
@@ -8899,6 +8931,7 @@ GameObject:
   - component: {fileID: 2003029409}
   - component: {fileID: 2003029408}
   - component: {fileID: 2003029407}
+  - component: {fileID: 2003029410}
   m_Layer: 5
   m_Name: BtnReplay
   m_TagString: Untagged
@@ -9008,6 +9041,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003029405}
   m_CullTransparentMesh: 1
+--- !u!114 &2003029410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003029405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07622e331c3792349a281e4356e4ef09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelButton: 0
+  replayGameButton: 1
+  exitGameButton: 0
 --- !u!4 &2015269419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3394648223675442684, guid: b4950680e0bf3f5498e4bbf10f0f152d, type: 3}
