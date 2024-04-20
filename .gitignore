@@ -73,6 +73,6 @@ crashlytics-build.properties
 
 # Ignore Level 03 (Working)
 
-/Assets/Scenes/Level03.unity
-Level03
-Level03.*
+!/Assets/Scenes/Level03.unity
+!Level03
+!Level03.*
