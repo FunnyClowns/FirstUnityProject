@@ -15,7 +15,7 @@ public class FObstacleMovement : MonoBehaviour
     
     private bool stopLook = false;
     private bool isFObsReady = false;
-    private Vector3 RollingRotation = new Vector3(0, 0, -50);
+    private Vector3 RollingRotation = new Vector3(0, 0, -100);
     private Vector3 tempPos; 
     Vector3 velocity;
 
