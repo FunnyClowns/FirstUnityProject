@@ -24,13 +24,13 @@ public class FObstacleMovement : MonoBehaviour
 
     }
 
-    void Update(){
+    void FixedUpdate(){
         if (startMoving){
 
             if (!stopLook){
                 lookAtPlayer();
             } else {
-                moveBulletSpinning();
+                setBulletSpinning();
             }
             
             if (transform.position != tempPos){
@@ -46,11 +46,11 @@ public class FObstacleMovement : MonoBehaviour
     }
 
     private void lookAtPlayer(){
-        transform.LookAt(player.transform.position * Time.deltaTime);
+        this.transform.LookAt(player.transform.position);
 
     }
 
-    private void moveBulletSpinning(){
+    private void setBulletSpinning(){
         Quaternion deltaRotation = Quaternion.Euler(RollingRotation * Time.fixedDeltaTime);
         rb.MoveRotation(rb.rotation * deltaRotation);
         
