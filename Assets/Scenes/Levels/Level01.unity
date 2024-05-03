@@ -4080,7 +4080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 265724576}
   player: {fileID: 1964642410}
-  isGameEnded: 0
+  m_createChunks: {fileID: 1879169515}
 --- !u!4 &868500604
 Transform:
   m_ObjectHideFlags: 0

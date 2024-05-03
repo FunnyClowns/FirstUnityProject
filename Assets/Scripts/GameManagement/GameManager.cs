@@ -6,6 +6,7 @@ public class GameManagerScript : MonoBehaviour
 {
     public GameObject uiManager;
     public PlayerMovement player;
+
     public bool isGameEnded = false;
     private string currentLevel;
 
@@ -48,9 +49,5 @@ public class GameManagerScript : MonoBehaviour
             player.stopPlayerMovement();
             uiManager.GetComponent<UIScript>().endGame(isGameWin);
         }
-    }
-
-    public bool GetGameEndedVal(){
-        return isGameEnded;
     }
 }

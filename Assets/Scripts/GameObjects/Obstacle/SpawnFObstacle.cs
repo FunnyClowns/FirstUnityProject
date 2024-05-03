@@ -6,6 +6,7 @@ public class SpawnFObstacle : MonoBehaviour
     public GameObject FObstacle;
     public GameObject posOffset;
     public GameManagerScript gameManager;
+    
 
     private void Start(){
         StartCoroutine(spawnFObsLoop());
@@ -26,6 +27,11 @@ public class SpawnFObstacle : MonoBehaviour
             DuplicateFObj.GetComponent<FObstacleMovement>().startMoving = true;
             DuplicateFObj.GetComponent<FObstacleMovement>().posOffset = posOffset;
 
-        }while (!gameManager.GetGameEndedVal());
+        } while (!GameEnded());
+    }
+
+    bool GameEnded(){
+        // Stop spawning if the game is ended
+        return gameManager.isGameEnded;
     }
 }

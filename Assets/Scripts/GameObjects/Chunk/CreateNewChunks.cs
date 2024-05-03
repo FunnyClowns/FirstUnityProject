@@ -5,17 +5,13 @@ using UnityEngine;
 
 public class CreateNewChunks : MonoBehaviour
 {
-    private float WaitTime = 3f;
 
-    public GameManagerScript gameManager;
+    [SerializeField] GameManagerScript gameManager;
     
-    public GameObject[] Chunks;
+    [SerializeField] GameObject[] Chunks;
     
 
-    void Start()
-    {
-        StartCoroutine(GenerateNewChunk());
-    }
+    void Start(){ StartCoroutine(GenerateNewChunk()); }
 
     GameObject getRandomChunk(int chunksLength){
         int randomChunk = Random.Range(0, chunksLength);
@@ -24,6 +20,9 @@ public class CreateNewChunks : MonoBehaviour
 
         return Chunks[randomChunk];
     }
+
+
+    private readonly float WaitTime = 3f;
 
     IEnumerator GenerateNewChunk(){
         int chunksLength = Chunks.Length;
@@ -37,6 +36,11 @@ public class CreateNewChunks : MonoBehaviour
             Duplicate.transform.position = this.gameObject.transform.position;
             Duplicate.GetComponent<ChunkComponent>().startMoving = true;
             
-        } while(!gameManager.GetGameEndedVal());
+        } while(!GameEnded());
+    }
+
+    bool GameEnded(){
+        // Stop spawning if the game is ended
+        return gameManager.isGameEnded;
     }
 }

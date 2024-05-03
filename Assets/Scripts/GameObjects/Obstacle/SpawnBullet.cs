@@ -8,7 +8,8 @@ public class SpawnBullet : MonoBehaviour
     public GameManagerScript gameManager;
     public GameObject bullet;
     public GameObject cannon;
-    public bool isGameEnded = false;
+
+
     private char cannonType;
 
     void Start(){
@@ -69,6 +70,11 @@ public class SpawnBullet : MonoBehaviour
                 duplicateBullet.GetComponent<BulletMovement>().enabled = true;
             }
 
-        }while(!gameManager.GetGameEndedVal());
+        }while(!GameEnded());
+    }
+
+    bool GameEnded(){
+        // Stop spawning if the game is ended
+        return gameManager.isGameEnded;
     }
 }
