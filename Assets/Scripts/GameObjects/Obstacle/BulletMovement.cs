@@ -59,12 +59,11 @@ public class BulletMovement : MonoBehaviour
             float rng = Random.value;
 
             if (continueMoving){
-                if (rng <= 0.9f){
-                    Debug.Log("Move again");
-                } else {
+                if (rng >= 0.9f){
                     Debug.Log("Move to player");
                     MoveToPlayer();
                     continueMoving = false;
+
                 }
             }
 
@@ -75,11 +74,8 @@ public class BulletMovement : MonoBehaviour
 
     void MoveToPlayer(){
         Vector3 playerPos;
-        
-        Debug.Log(tempPos);
         playerPos = player.transform.position;
-        tempPos = playerPos;
 
-        Debug.Log(tempPos);
+        tempPos = playerPos;
     }
 }
