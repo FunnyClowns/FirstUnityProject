@@ -982,6 +982,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa3f91b730d120488c2ec35043ee128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData:
+    Level01: 1
+    Level02: 0
+    Level03: 0
+    Level04: 0
 --- !u!4 &153315464
 Transform:
   m_ObjectHideFlags: 0
@@ -2116,7 +2121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit Game
+  m_text: Back to Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5557,7 +5562,7 @@ GameObject:
   - component: {fileID: 783445914}
   - component: {fileID: 783445917}
   m_Layer: 5
-  m_Name: BtnExitGame
+  m_Name: BtnExitScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5679,7 +5684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevelButton: 0
   replayGameButton: 0
-  exitGameButton: 1
+  exitSceneButton: 1
 --- !u!4 &798644753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3394648223675442684, guid: b4950680e0bf3f5498e4bbf10f0f152d, type: 3}
@@ -9435,7 +9440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevelButton: 1
   replayGameButton: 0
-  exitGameButton: 0
+  exitSceneButton: 0
 --- !u!4 &1413394779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3394648223675442684, guid: b4950680e0bf3f5498e4bbf10f0f152d, type: 3}
@@ -13452,7 +13457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevelButton: 0
   replayGameButton: 1
-  exitGameButton: 0
+  exitSceneButton: 0
 --- !u!4 &2015269419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3394648223675442684, guid: b4950680e0bf3f5498e4bbf10f0f152d, type: 3}

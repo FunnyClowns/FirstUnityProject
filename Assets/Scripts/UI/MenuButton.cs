@@ -10,7 +10,7 @@ public class MenuButton : MonoBehaviour, IPointerClickHandler
     
     public bool nextLevelButton;
     public bool replayGameButton;
-    public bool exitGameButton;
+    public bool exitSceneButton;
 
     private bool isButtonClicked = false;
 
@@ -22,8 +22,8 @@ public class MenuButton : MonoBehaviour, IPointerClickHandler
                 Invoke("loadNextScene", 2f);
             } else if(replayGameButton){
                 Invoke("loadCurrentScene", 2f);
-            } else if(exitGameButton){
-                Invoke("exitGame", 2f);
+            } else if(exitSceneButton){
+                Invoke("exitScene", 2f);
             } else {
                 Debug.Log("Error processing clicked button");
             }
@@ -71,12 +71,7 @@ public class MenuButton : MonoBehaviour, IPointerClickHandler
         return SceneManager.GetActiveScene().name;
     }
 
-    private void exitGame(){
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-
-        #endif
+    private void exitScene(){
+        SceneManager.LoadScene("MainMenu");
     }
 }
