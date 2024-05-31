@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class ObstacleMovement : MonoBehaviour

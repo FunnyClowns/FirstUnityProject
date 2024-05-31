@@ -51,6 +51,7 @@ public class MenuButton : MonoBehaviour, IPointerClickHandler
                 break;
 
             case "Level03":
+                nextScene = "MainMenu";
                 break;
 
             default:

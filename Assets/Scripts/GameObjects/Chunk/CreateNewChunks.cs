@@ -9,6 +9,8 @@ public class CreateNewChunks : MonoBehaviour
     [SerializeField] GameManagerScript gameManager;
     
     [SerializeField] GameObject[] Chunks;
+
+    [SerializeField] bool LevelScene;
     
 
     void Start(){ StartCoroutine(GenerateNewChunk()); }
@@ -36,11 +38,15 @@ public class CreateNewChunks : MonoBehaviour
             Duplicate.transform.position = this.gameObject.transform.position;
             Duplicate.GetComponent<ChunkComponent>().startMoving = true;
             
-        } while(!GameEnded());
+        } while(ContinueGenerate());
     }
 
-    bool GameEnded(){
-        // Stop spawning if the game is ended
-        return gameManager.isGameEnded;
+    bool ContinueGenerate(){
+        if (LevelScene){
+            // Stop spawning if the game is ended
+            return !gameManager.isGameEnded;
+        }
+
+        return true;
     }
 }

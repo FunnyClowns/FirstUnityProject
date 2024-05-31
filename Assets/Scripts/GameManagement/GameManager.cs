@@ -6,15 +6,16 @@ public class GameManagerScript : MonoBehaviour
 {
     public GameObject uiManager;
     public PlayerMovement player;
+    [SerializeField] GameDataManager gameDataManager;
 
     public bool isGameEnded = false;
-    private string currentLevel;
+    private string activeScene;
 
     void Start(){
 
-        currentLevel = SceneManager.GetActiveScene().name;
+        activeScene = SceneManager.GetActiveScene().name;
 
-        switch(currentLevel){
+        switch(activeScene){
             case "Level01":
                 Debug.Log("Level 01");
                 SceneManager.CreateScene("Leve02");
@@ -27,6 +28,7 @@ public class GameManagerScript : MonoBehaviour
 
             case "Level03":
                 Debug.Log("Level 03");
+                SceneManager.CreateScene("MainMenu");
                 break;
             
             default:
@@ -42,6 +44,9 @@ public class GameManagerScript : MonoBehaviour
 
             if(isGameWin){
                 Debug.Log("GAME WIN");
+
+                gameDataManager.SaveLevel(activeScene);
+
             } else {
                 Debug.Log("GAME LOSE");
             }
