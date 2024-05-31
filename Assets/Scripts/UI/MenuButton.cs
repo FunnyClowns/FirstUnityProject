@@ -32,35 +32,7 @@ public class MenuButton : MonoBehaviour, IPointerClickHandler
     }
 
     private void loadNextScene(){
-        SceneManager.LoadScene(getNextScene());
-    }
-
-    private string getNextScene(){
-        string nextScene = "";
-        string activeScene = SceneManager.GetActiveScene().name;
-
-        Debug.Log(activeScene);
-        switch(activeScene){    
-
-            case "Level01":
-                nextScene = "Level02";
-                break;
-            
-            case "Level02":
-                nextScene = "Level03";
-                break;
-
-            case "Level03":
-                nextScene = "MainMenu";
-                break;
-
-            default:
-                Debug.Log("Error detecting active level.");
-                break;
-
-        }
-
-        return nextScene;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void loadCurrentScene(){
