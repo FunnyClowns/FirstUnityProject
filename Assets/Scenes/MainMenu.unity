@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
-  LevelScene: {fileID: 102900000, guid: 9de69d47d576187418f1a3060b2652fd, type: 3}
+  LevelScene: Level02
   LevelText: {fileID: 1437324987}
   LockedText: {fileID: 1137583955}
 --- !u!4 &88335032 stripped
@@ -1924,7 +1924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
-  LevelScene: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+  LevelScene: Level01
   LevelText: {fileID: 186901517}
   LockedText: {fileID: 1998892359}
 --- !u!1001 &411960368
@@ -9245,7 +9245,6 @@ MonoBehaviour:
   - {fileID: 969777264}
   - {fileID: 921139354}
   - {fileID: 767685024}
-  LevelScene: 0
 --- !u!54 &1880170615 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 2025075337975040360, guid: b4950680e0bf3f5498e4bbf10f0f152d, type: 3}
@@ -9785,7 +9784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
-  LevelScene: {fileID: 102900000, guid: 2d2a43484c3725c499cd2b03d799062f, type: 3}
+  LevelScene: Level03
   LevelText: {fileID: 1332091531}
   LockedText: {fileID: 677969663}
 --- !u!4 &1989070545 stripped

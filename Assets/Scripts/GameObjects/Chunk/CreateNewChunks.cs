@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreateNewChunks : MonoBehaviour
 {
@@ -10,8 +11,11 @@ public class CreateNewChunks : MonoBehaviour
     
     [SerializeField] GameObject[] Chunks;
 
-    [SerializeField] bool LevelScene;
+    bool LevelScene;
     
+    void Awake(){
+        LevelScene = isLevelScene();
+    }
 
     void Start(){ StartCoroutine(GenerateNewChunk()); }
 
@@ -45,6 +49,17 @@ public class CreateNewChunks : MonoBehaviour
         if (LevelScene){
             // Stop spawning if the game is ended
             return !gameManager.isGameEnded;
+        }
+
+        return true;
+    }
+
+    bool isLevelScene(){
+
+        string ActiveScene = SceneManager.GetActiveScene().name;
+
+        if (ActiveScene == "MainMenu"){
+            return false;
         }
 
         return true;

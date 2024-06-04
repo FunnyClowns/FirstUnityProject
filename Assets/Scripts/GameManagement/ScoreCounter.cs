@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour{
 
-    private int Score = 55;
+    private int Score = -1;
     public TextMeshProUGUI scoreText;
     public bool isWin = false;
     public bool timeStopped = false;

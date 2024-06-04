@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,13 +9,13 @@ public class LevelSelection : MonoBehaviour
 {
     public bool isLocked = true;
 
-    [SerializeField] SceneAsset LevelScene; 
+    [SerializeField] string LevelScene; 
     [SerializeField] GameObject LevelText;
     [SerializeField] GameObject LockedText;
 
      public void OnClickButton(){
           if(!isLocked){
-               SceneManager.LoadScene(LevelScene.name);
+               SceneManager.LoadScene(LevelScene);
           }
      }
 
